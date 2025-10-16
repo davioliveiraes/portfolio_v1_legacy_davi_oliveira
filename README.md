@@ -8,7 +8,7 @@
 </div>
 
 <div align="center">
-  <h3>🚀 Uma aplicação web moderna e responsiva para apresentar meu portfólio profissional</h3>
+  <h3>Uma aplicação web moderna e responsiva para apresentar meu portfólio profissional</h3>
   
   <p>
     <a href="#-sobre-o-projeto">Sobre</a> •
@@ -87,12 +87,11 @@ python-dotenv==1.1.0        # Gerenciamento de variáveis de ambiente
 ### 💻 **Habilidades Técnicas**
 - Showcase de tecnologias dominadas
 - Níveis de proficiência
-- Categorização por áreas (Frontend, Backend, etc.)
+- Categorização por áreas (Backend, Dados, etc.)
 
 ### 🚀 **Portfólio de Projetos**
 - Galeria de projetos desenvolvidos
-- Descrições detalhadas e tecnologias utilizadas
-- Links para repositórios e demos online
+- Links para repositórios
 
 ### 📞 **Contato & Serviços**
 - Formulário de contato integrado
@@ -129,18 +128,36 @@ ALLOWED_HOSTS=seu-dominio.com
 ## 📂 Estrutura do Projeto
 
 ```
-portfolio_davi_oliveira/
-├── 📁 static/              # Arquivos estáticos (CSS, JS, imagens)
-├── 📁 templates/           # Templates HTML
-├── 📁 media/              # Uploads de usuário
-├── 📁 portfolio/          # App principal
-│   ├── 📄 models.py       # Modelos de dados
-│   ├── 📄 views.py        # Lógica das views
-│   ├── 📄 urls.py         # Rotas da aplicação
-│   └── 📄 admin.py        # Configuração do admin
-├── 📄 manage.py           # Script de gerenciamento Django
-├── 📄 requirements.txt    # Dependências do projeto
-└── 📄 README.md          # Documentação
+📁 PORTFOLIO_DAVI_OLIVEIRA/
+├── 📁 core/                                    # App principal do portfólio
+│   ├── 📁 __pycache__/                         # Cache Python (gerado automaticamente)
+│   ├── 📁 migrations/                          # Migrações do banco de dados
+│   ├── __init__.py                             # Marca o diretório como pacote Python
+│   ├── admin.py                                # Configuração do painel administrativo
+│   ├── apps.py                                 # Configuração do app Django
+│   ├── models.py                               # Modelos de dados (tabelas do BD)
+│   ├── tests.py                                # Testes automatizados
+│   ├── urls.py                                 # Rotas específicas do app
+│   └── views.py                                # Lógica das views (controladores)
+├── 📁 media/                                   # Uploads de usuário (imagens, arquivos)
+├── 📁 portfolio_davi_oliveira/                 # Configuração principal do projeto
+│   ├── 📁 __pycache__/                         # Cache Python (gerado automaticamente)
+│   ├── __init__.py                             # Marca o diretório como pacote Python
+│   ├── asgi.py                                 # Configuração para servidor ASGI
+│   ├── settings.py                             # Configurações do Django (BD, apps, etc)
+│   ├── urls.py                                 # Rotas principais do projeto
+│   └── wsgi.py                                 # Configuração para servidor WSGI
+├── 📁 static/                                  # Arquivos estáticos (CSS, JS, imagens)
+├── 📁 staticfiles/                             # Arquivos estáticos coletados (produção)
+├── 📁 templates/                               # Templates HTML do projeto
+├── 📁 venv/                                    # Ambiente virtual Python
+├── ⚙️ .env                                     # Variáveis de ambiente (senhas, chaves)
+├── 🚫 .gitignore                               # Arquivos ignorados pelo Git
+├── 📊 data_backup.json                         # Backup dos dados do banco
+├── 🗄️ db.sqlite3                              # Banco de dados SQLite
+├── manage.py                                   # Script de gerenciamento Django
+├── 📝 README.md                                # Documentação do projeto
+└── 📦 requirements.txt                         # Dependências do projeto (pip)
 ```
 
 ---
@@ -158,6 +175,6 @@ Contribuições são sempre bem-vindas! Para contribuir:
 ---
 
 <div align="center">
-  <p>💡 <strong>Desenvolvido por Davi Oliveira - Software Engineer </strong></p>
-  <p>⭐ Se este projeto te ajudou, considere dar uma estrela no repositório!</p>
+  <p><strong>Desenvolvido por Davi Oliveira - Software Engineer </strong></p>
+  <p>Se este projeto te ajudou, considere dar uma estrela no repositório!</p>
 </div>

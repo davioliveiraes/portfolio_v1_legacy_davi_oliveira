@@ -1,203 +1,294 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
-
-   <div id="home" class="banner-area section-padding">
-        <div class="bg-overlay black"></div>
-        <div class="containter">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="welcome-text">
-                        <div class="name-area wow fadeInDown" data-wow-delay="0.2s">Olá, meu nome é Davi de Lima Oliveira</div>
-                        <h1 class="wow fadeInDown" data-wow-delay="0.4s">Graduando em Engenharia de Software</h1>
-                        <a href="#about" class="my-btn-1 wow fadeInDown" data-wow-delay="0.6s">Saiba mais</a>
-                        <a href="#contact" class="my-btn-2 wow fadeInDown" data-wow-delay="0.8s">Entre em contato</a>
+<div id="home" class="banner-area section-padding">
+    <div class="bg-overlay black"></div>
+    <div class="containter">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="welcome-text">
+                    <div class="name-area wow fadeInDown" data-wow-delay="0.2s">
+                        Olá, meu nome é Davi de Lima Oliveira
                     </div>
-                    <div class="social-icons" style="margin-top: 40px; text-align: center;">
-                        <a href="https://www.linkedin.com/in/davioliveiraes/" target="_blank" style="margin: 0 10px; color: orange;">
-                            <i class="fa fa-linkedin fa-lg"></i>
-                        </a>
-                        <a href="https://github.com/davioliveiraes" target="_blank" style="margin: 0 10px; color: orange;">
-                            <i class="fa fa-github fa-lg"></i>
-                        </a>
-                        <a href="https://www.instagram.com/davioliveira_es/" target="_blank" style="margin: 0 10px; color: orange;">
-                            <i class="fa fa-instagram fa-lg"></i>
-                        </a>
-                    </div>
+                    <h1 class="wow fadeInDown" data-wow-delay="0.4s">
+                        Graduando em Engenharia de Software
+                    </h1>
+                    <a
+                        href="#about"
+                        class="my-btn-1 wow fadeInDown"
+                        data-wow-delay="0.6s"
+                    >
+                        Saiba mais
+                    </a>
+                    <a
+                        href="#contact"
+                        class="my-btn-2 wow fadeInDown"
+                        data-wow-delay="0.8s"
+                    >
+                        Entre em contato
+                    </a>
+                </div>
+                <div
+                    class="social-icons"
+                    style="margin-top: 40px; text-align: center"
+                >
+                    <a
+                        href="https://www.linkedin.com/in/davioliveiraes/"
+                        target="_blank"
+                        style="margin: 0 10px; color: orange"
+                    >
+                        <i class="fa fa-linkedin fa-lg"></i>
+                    </a>
+                    <a
+                        href="https://github.com/davioliveiraes"
+                        target="_blank"
+                        style="margin: 0 10px; color: orange"
+                    >
+                        <i class="fa fa-github fa-lg"></i>
+                    </a>
+                    <a
+                        href="https://www.instagram.com/davioliveira_es/"
+                        target="_blank"
+                        style="margin: 0 10px; color: orange"
+                    >
+                        <i class="fa fa-instagram fa-lg"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div id="about" class="about-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 col-sn-8 col-xs-12 wow fadeInLeft" data-wow-delay="0.2s">
-                    <div class="about-left">
-                        <h2 class="section-title">Sobre mim</h2>
-                        <div class="line"></div>
-                        <h4>{{ about.short_description }}</h4>
-                        <p>{{ about.description }}</p>
-                        <a href="media/about/cv-davi-oliveira.pdf" download>Download CV&nbsp;<i class="fa fa-download"></i></a>
-                    </div>
+<div id="about" class="about-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div
+                class="col-md-7 col-sn-8 col-xs-12 wow fadeInLeft"
+                data-wow-delay="0.2s"
+            >
+                <div class="about-left">
+                    <h2 class="section-title">Sobre mim</h2>
+                    <div class="line"></div>
+                    <h4>{{ about.short_description }}</h4>
+                    <p>{{ about.description }}</p>
+                    <a href="media/about/cv-davi-oliveira.pdf" download>
+                        Download CV&nbsp;
+                        <i class="fa fa-download"></i>
+                    </a>
                 </div>
-                <div class="col-md-5 visible-md visible-lg wow fadeInDown" data-wow-delay="0.6s">
-                    <div class="profile">
-                        <img src="{{ about.image.url }}" alt="Profile image" class="img-responsive" style="width: 100%; height: 600px; object-fit; object-position: top; border-radius: 5%">
-                    </div>
+            </div>
+            <div
+                class="col-md-5 visible-md visible-lg wow fadeInDown"
+                data-wow-delay="0.6s"
+            >
+                <div class="profile">
+                    <img
+                        src="{{ about.image.url }}"
+                        alt="Profile image"
+                        class="img-responsive"
+                        style="width: 100%; height: 600px; object-fit; object-position: top; border-radius: 5%"
+                    />
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div id="services" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-header text-center">
-                        <h2>Tecnologias</h2>
+<div id="services" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header">
+                    <h2>Tecnologias</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for service in services %}
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div
+                    class="single-service wow fadeInDown"
+                    data-wow-delay="0.2s"
+                >
+                    <i class="icon-laptop"></i>
+                    <h2>{{ service.name }}</h2>
+                    <p>{{ service.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div id="portfolio" class="portfolio-area section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header">
+                    <h2>Projetos</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for work in works %}
+            <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
+                <div class="gallery-items">
+                    <a
+                        class="view img"
+                        href="{{ work.image.url }}"
+                        target="_blank"
+                    >
+                        <img src="{{ work.image.url }}" alt="work image" />
+                    </a>
+                    <p>
+                        <a href="{{ work.github_link }}" target="_blank">
+                            VER REPOSITÓRIO
+                        </a>
+                    </p>
+                    <div class="gallery-text">
+                        <h2>{{ work.title }}</h2>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                {% for service in services %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
-                    <div class="col-md-4 col-sm-4">
-                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
-                            <i class="icon-laptop"></i>
-                            <h2>{{ service.name }}</h2>
-                            <p>{{ service.description }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
+<div class="invitation-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="single-invite text-center">
+                <h2>Você tem algum projeto que precisa ser feito?</h2>
+                <p>
+                    Objetivo profissional é entregar soluções bem pensadas e
+                    eficientes, alinhadas às necessidades reais dos usuários e
+                    das empresas, e contribuir de forma significativa para o
+                    crescimento da equipe e da organização. Vamos trabalhar
+                    juntos? Entre em contato!
+                </p>
+                <a href="#contact" class="my-btn-3">Começa aqui</a>
             </div>
         </div>
     </div>
+</div>
 
-    <div id="portfolio" class="portfolio-area section-padding">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-header">
-                        <h2>Projetos</h2>
-                    </div>
+<div id="contact" class="contact-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header text-center">
+                    <h2>Entre em contato comigo.</h2>
                 </div>
             </div>
-            <div class="row">
-                {% for work in works %}
-                    <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
-                        <div class="gallery-items">
-                            <a class="view img" href="{{ work.image.url }}" target="_blank">
-                                <img src="{{ work.image.url }}" alt="work image">
-                            </a>
-                            <p><a href="{{ work.github_link }}" target="_blank">VER REPOSITÓRIO</a></p>
-                            <div class="gallery-text">
-                                <h2>{{ work.title }}</h2>
+        </div>
+        <div class="row">
+            <div
+                class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 box-contact-form"
+            >
+                <form
+                    id="contact-form"
+                    method="post"
+                    action="{% url 'contato' %}"
+                >
+                    {% csrf_token %}
+                    <div class="messages"></div>
+
+                    <div class="controls">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div
+                                    class="form-group wow fadeInDown"
+                                    data-wow-delay="0.2s"
+                                >
+                                    <input
+                                        id="form_name"
+                                        type="text"
+                                        name="name"
+                                        class="form-control"
+                                        placeholder="Diga o seu nome completo *"
+                                        required="required"
+                                        data-error="O nome completo é necessário."
+                                    />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div
+                                    class="form-group wow fadeInDown"
+                                    data-wow-delay="0.4s"
+                                >
+                                    <input
+                                        id="form_email"
+                                        type="email"
+                                        name="email"
+                                        class="form-control"
+                                        placeholder="Digite o seu email *"
+                                        required="required"
+                                        data-error="É necessário um email válido."
+                                    />
+                                    <div class="help-block with-errors"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-
-    <div class="invitation-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="single-invite text-center">
-                    <h2>Você tem algum projeto que precisa ser feito?</h2>
-                    <p>Objetivo profissional é entregar soluções bem pensadas e eficientes, alinhadas às necessidades reais dos usuários e das empresas, e contribuir de forma significativa para o crescimento da equipe e da organização. Vamos trabalhar juntos? Entre em contato!</p>
-                    <a href="#contact" class="my-btn-3">Começa aqui</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="contact" class="contact-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-header text-center">
-                        <h2>Entre em contato comigo.</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 box-contact-form">
-
-                    <form id="contact-form" method="post" action="{% url 'contato' %}">
-                        {% csrf_token %}
-                        <div class="messages"></div>
-
-                        <div class="controls">
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group wow fadeInDown" data-wow-delay="0.2s">
-                                        <input id="form_name" type="text" name="name" class="form-control"
-                                               placeholder="Diga o seu nome completo *" required="required"
-                                               data-error="O nome completo é necessário.">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group wow fadeInDown" data-wow-delay="0.4s">
-                                        <input id="form_email" type="email" name="email" class="form-control"
-                                               placeholder="Digite o seu email *" required="required"
-                                               data-error="É necessário um email válido.">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div
+                                    class="form-group wow fadeInUp"
+                                    data-wow-delay="0.6s"
+                                >
+                                    <textarea
+                                        id="form_message"
+                                        name="message"
+                                        class="form-control"
+                                        placeholder="Sua mensagem *"
+                                        rows="4"
+                                        required="required"
+                                        data-error="Deixe uma mensagem para mim"
+                                    ></textarea>
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group wow fadeInUp" data-wow-delay="0.6s">
-                                        <textarea id="form_message" name="message" class="form-control"
-                                                  placeholder="Sua mensagem *" rows="4" required="required"
-                                                  data-error="Deixe uma mensagem para mim"></textarea>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <button class="btn btn-send" type="submit">Enviar Mensagem</button>
-                                </div>
-                                {% if message %}
-                                    <ul class="messages">
-                                        {% for message in messages %}
-                                            <li>{{ message }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
+                            <div class="col-md-12">
+                                <button class="btn btn-send" type="submit">
+                                    Enviar Mensagem
+                                </button>
                             </div>
+                            {% if message %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
                         </div>
-
-                    </form>
-
-                </div>
-
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-    
-        let formData = new FormData(this);
+<script>
+    document
+        .getElementById('contact-form')
+        .addEventListener('submit', function (event) {
+            event.preventDefault()
 
-        fetch("{% url 'contato' %}", {
-            method: "POST",
-            body: formData
+            let formData = new FormData(this)
+
+            fetch("{% url 'contato' %}", {
+                method: 'POST',
+                body: formData,
+            })
+                .then((response) => response.text())
+                .then((data) => {
+                    alert('Mensagem enviada com sucesso!')
+                })
+                .catch((error) => {
+                    alert('Erro ao enviar mensagem.')
+                    console.error(error)
+                })
         })
-        .then(response => response.text())
-        .then(data => {
-            alert("Mensagem enviada com sucesso!");
-        })
-        .catch(error => {
-            alert("Erro ao enviar mensagem.");
-            console.error(error);
-            });
-        });
-    </script>
+</script>
 
 {% endblock %}

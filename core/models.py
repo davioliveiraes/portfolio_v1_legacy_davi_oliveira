@@ -1,36 +1,55 @@
 from django.db import models
 
 class About(models.Model):
-   short_description = models.TextField()
-   description = models.TextField()
-   image = models.ImageField(upload_to="about/")
+    """Informações sobre você"""
 
-   class Meta:
-      verbose_name = "About me"
-      verbose_name_plural = "About me"
-   
-   def __str__(self):
-      return "About me"
+    short_description = models.TextField(verbose_name="Descrição curta")
+    description = models.TextField(verbose_name="Descrição completa")
+    image = models.ImageField(upload_to="about/", verbose_name="Foto de perfil")
 
-class Service(models.Model):
-   name = models.CharField(max_length=100, verbose_name="Service name")
-   description = models.TextField(verbose_name="About service")
+    class Meta:
+        verbose_name = "Sobre Mim"
+        verbose_name_plural = "Sobre Mim"
+    
+    def __str__(self):
+        return "Sobre Mim"
 
-   def __str__(self):
-      return self.name
+class Technology(models.Model):
+    """Tecnologias que você domina"""
 
-class RecentWork(models.Model):
-   title = models.CharField(max_length=100, verbose_name="Work title")
-   image = models.ImageField(upload_to="works")
-   github_link = models.URLField(verbose_name="GitHub Repository", blank=True, null=True)
+    name = models.TextField(max_length=100, verbose_name="Nome da tecnologia")
+    description = models.TextField(verbose_name="Sobre a tecnologia")
 
-   def __str__(self):
-      return self.title
+    class Meta:
+        verbose_name = "Tecnologia"
+        verbose_name_plural = "Tecnologias"
+    
+    def __str__(self):
+        return self.name
 
-class Client(models.Model):
-   name = models.CharField(max_length=100, verbose_name="Client name")
-   description = models.TextField(verbose_name="Client say")
-   image = models.ImageField(upload_to="clients", default="default.png")
+class Project(models.Model):
+    """Projeto do porfólio"""
 
-   def __str__(self):
-      return self.name
+    title = models.CharField(max_length=100, verbose_name="Título do projeto")
+    image = models.ImageField(upload_to="projects/", verbose_name="Imagem do projeto")
+    github_link= models.URLField(verbose_name="Link do GitHub", blank=True)
+
+    class Meta:
+        verbose_name = "Projeto"
+        verbose_name_plural = "Projetos"
+    
+    def __str__(self):
+        return self.title
+    
+class Experience(models.Model):
+    """Experiencia profissionais"""
+    name = models.CharField(max_length=100, verbose_name="Empresa/Cargo")
+    description = models.TextField(verbose_name="Descricao da experiencia")
+    image = models.ImageField(upload_to="experiences/", verbose_name="Logo", blank=True, null=True)
+
+    class Meta:
+        verbose_name="Experiencia"
+        verbose_name_plural = "Experiencias"
+    
+    def __str__(self):
+        return self.name

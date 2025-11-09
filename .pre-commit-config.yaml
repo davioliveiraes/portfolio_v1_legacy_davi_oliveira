@@ -1,0 +1,38 @@
+# Pre-commit hooks configuration
+repos:
+  # Pylint
+  - repo: https://github.com/PyCQA/pylint
+    rev: v3.0.3
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        types: [python]
+        args:
+          [
+            "--rcfile=.pylintrc",
+            "--load-plugins=pylint_django",
+            "--django-settings-module=portfolio_legacy_davi_oliveira.settings"
+          ]
+        files: ^(core|portfolio_legacy_davi_oliveira)/.*\.py$
+        exclude: ^.*(migrations|__pycache__|venv)/.*$
+
+  # Black (formatador de código)
+  - repo: https://github.com/psf/black
+    rev: 24.1.1
+    hooks:
+      - id: black
+        name: black
+        language_version: python3.12
+        exclude: ^.*(migrations|venv)/.*$
+
+  # Trailing whitespace e end of file
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
